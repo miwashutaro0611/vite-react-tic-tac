@@ -1,0 +1,17 @@
+.game {
+  display: flex;
+}
+
+.game-board {
+  margin-right: 20px;
+}
+
+.game-button-item + .game-button-item {
+  margin-top: 2px;
+}
+
+.game-button-item-button {
+  border: 1px solid #333;
+  font-size: 16px;
+  padding: 10px;
+}

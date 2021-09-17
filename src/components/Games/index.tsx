@@ -1,6 +1,7 @@
 import React, { useState, VFC } from "react"
 import { Board } from "../Board"
 import { Squares, SquaresUser } from "../../types/squares"
+import style from "./style.module.css"
 
 const Games: VFC = () => {
   const [history, setHistory] = useState<Squares[]>([
@@ -35,7 +36,7 @@ const Games: VFC = () => {
   }
 
   const handleClick = (i: number) => {
-    const localHistory = history
+    const localHistory = history.slice(0, stepNumber + 1)
     const localCurrent = localHistory[localHistory.length - 1]
     const localSquares = localCurrent.squares.slice()
     if (calulateWinner(localSquares) || localSquares[i]) return
@@ -63,8 +64,12 @@ const Games: VFC = () => {
   const moves = history.map((step, moveNum) => {
     const desc = moveNum ? `Go to move #${moveNum}` : "Go to game start"
     return (
-      <li key={moveNum}>
-        <button type="button" onClick={() => jumpTo(moveNum)}>
+      <li className={style["game-button-item"]} key={moveNum}>
+        <button
+          className={style["game-button-item-button"]}
+          type="button"
+          onClick={() => jumpTo(moveNum)}
+        >
           {desc}
         </button>
       </li>
@@ -79,15 +84,15 @@ const Games: VFC = () => {
   }
   return (
     <React.Fragment>
-      <div className="game">
-        <div className="game-board">
+      <div className={style.game}>
+        <div className={style["game-board"]}>
           <Board
             squares={current.squares}
             onClick={(i: number) => handleClick(i)}
           />
         </div>
-        <div className="game-info">
-          <div>{status}</div>
+        <div>
+          <p>{status}</p>
           <ol>{moves}</ol>
         </div>
       </div>
