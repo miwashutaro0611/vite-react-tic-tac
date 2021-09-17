@@ -76,12 +76,10 @@ const Games: VFC = () => {
     )
   })
 
-  let status
-  if (winner) {
-    status = `winner: ${winner}`
-  } else {
-    status = `Next player: ${xIsNext ? "X" : "O"}`
-  }
+  const status = winner
+    ? `winner: ${winner}`
+    : `Next player: ${xIsNext ? "X" : "O"}`
+
   return (
     <React.Fragment>
       <div className={style.game}>
