@@ -3,7 +3,7 @@
 - [はじめに | Vite](https://ja.vitejs.dev/guide/)
 - [特徴 | Vite](https://ja.vitejs.dev/guide/features.html)
 
-# Create Projext
+# Create Project
 
 ```bash
 # yarn
