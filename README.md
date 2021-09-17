@@ -7,7 +7,8 @@
 
 ```bash
 # yarn
-$ yarn create vite my-vue-app --template react-ts
+# app-name: 任意のアプリ名
+$ yarn create vite app-name --template react-ts
 ```
 
 # Tutorial
