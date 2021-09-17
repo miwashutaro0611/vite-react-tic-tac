@@ -35,7 +35,7 @@ const Games: VFC = () => {
   }
 
   const handleClick = (i: number) => {
-    const localHistory = history
+    const localHistory = history.slice(0, stepNumber + 1)
     const localCurrent = localHistory[localHistory.length - 1]
     const localSquares = localCurrent.squares.slice()
     if (calulateWinner(localSquares) || localSquares[i]) return
