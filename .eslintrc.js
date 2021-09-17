@@ -30,6 +30,7 @@ module.exports = {
     ],
     "react/jsx-props-no-spreading": OFF,
     "react/prop-types": OFF,
+    "react/no-array-index-key": OFF,
     "react/jsx-fragments": [ERROR, "element"],
     "react/require-default-props": OFF,
     "react-hooks/rules-of-hooks": ERROR,
